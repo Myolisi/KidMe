@@ -1,0 +1,181 @@
+[{
+    "id": "030ccf05e31eb717b32648d4bd240c26",
+    "car_make": "Chevrolet",
+    "car_model": "Monte Carlo",
+    "car_vin": "1C4RDHDG5DC114503",
+    "car_model_year": 1999,
+    "user_id": "e96a0f5513c1d3d263f8349ac640e66d",
+    "activity_type": "adhoc30"
+  },
+  {
+    "id": "90883d5e0725797d619ef540f9b93ecf",
+    "car_make": "Merkur",
+    "car_model": "XR4Ti",
+    "car_vin": "2C3CCAKT8CH432342",
+    "car_model_year": 1985,
+    "user_id": "29c571aa5bd6d64647d0af09b7be8402",
+    "activity_type": "adhoc30"
+  },
+  {
+    "id": "0ce8ff50a500c8d6ca7a874f92908641",
+    "car_make": "Ford",
+    "car_model": "Focus",
+    "car_vin": "1G4GE5EV6AF480623",
+    "car_model_year": 2009,
+    "user_id": "e96a0f5513c1d3d263f8349ac640e66d",
+    "activity_type": "adhoc50"
+  },
+  {
+    "id": "dec041ea0f12d9a16f5edefba79e1b05",
+    "car_make": "Honda",
+    "car_model": "Prelude",
+    "car_vin": "JTHCL5EF4F5957076",
+    "car_model_year": 1999,
+    "user_id": "e96a0f5513c1d3d263f8349ac640e66d",
+    "activity_type": "adhoc100"
+  },
+  {
+    "id": "e1a41504828974e1e98c27433ac96363",
+    "car_make": "Dodge",
+    "car_model": "Ram Van 3500",
+    "car_vin": "WA1VMBFE6AD846453",
+    "car_model_year": 2002,
+    "user_id": "019426d049721c1f2b073e5df032719e",
+    "activity_type": "adhoc30"
+  },
+  {
+    "id": "84d2ddfc1cd2cc44aa56280b788d4ec4",
+    "car_make": "Mercedes-Benz",
+    "car_model": "C-Class",
+    "car_vin": "1G6DZ67A780573355",
+    "car_model_year": 2001,
+    "user_id": "29c571aa5bd6d64647d0af09b7be8402",
+    "activity_type": "adhoc1000"
+  },
+  {
+    "id": "3920223f4157550569321adac4706026",
+    "car_make": "Mercedes-Benz",
+    "car_model": "300SD",
+    "car_vin": "1G6DM5EY5B0379262",
+    "car_model_year": 1992,
+    "user_id": "019426d049721c1f2b073e5df032719e",
+    "activity_type": "adhoc30"
+  },
+  {
+    "id": "731bafcaa323534ce491358dbdca9cd1",
+    "car_make": "Kia",
+    "car_model": "Optima",
+    "car_vin": "1G6DL1E31C0970786",
+    "car_model_year": 2012,
+    "user_id": "214327b8ead05f15ce9396ddfd845eb1",
+    "activity_type": "adhoc100"
+  },
+  {
+    "id": "db45243eb4ecf6aca683ded236b35340",
+    "car_make": "BMW",
+    "car_model": "7 Series",
+    "car_vin": "JTHBB1BA0B2293628",
+    "car_model_year": 1996,
+    "user_id": "a48dbfba7167aa7022badea6d5818277",
+    "activity_type": "adhoc100"
+  },
+  {
+    "id": "5b3eae9d827a8664a482aa74917e7213",
+    "car_make": "Austin",
+    "car_model": "Mini",
+    "car_vin": "WAUDF98E96A701382",
+    "car_model_year": 1959,
+    "user_id": "5f30e327ff188460a39f101934ce9466",
+    "activity_type": "adhoc30"
+  },
+  {
+    "id": "f9d1986cc75321f62d040686a10ccadd",
+    "car_make": "Audi",
+    "car_model": "S5",
+    "car_vin": "WDDHF7GB5EB971238",
+    "car_model_year": 2010,
+    "user_id": "019426d049721c1f2b073e5df032719e",
+    "activity_type": "adhoc2000"
+  },
+  {
+    "id": "5626b40e5cd57403333346a578af94bc",
+    "car_make": "Land Rover",
+    "car_model": "Range Rover",
+    "car_vin": "WA1VGAFP9FA430845",
+    "car_model_year": 2000,
+    "user_id": "e2b7609b9d9cab600c930f521535ce46",
+    "activity_type": "adhoc100"
+  },
+  {
+    "id": "6c337042d5b0a93595cff398d3708eb2",
+    "car_make": "BMW",
+    "car_model": "3 Series",
+    "car_vin": "1G6DT57V490580408",
+    "car_model_year": 1995,
+    "user_id": "fc003692fd229178fbb7db1f39e64d5d",
+    "activity_type": "adhoc30"
+  },
+  {
+    "id": "f2ff638ded524c45aeb41b866b708caf",
+    "car_make": "Nissan",
+    "car_model": "300ZX",
+    "car_vin": "WAUDV94F09N790919",
+    "car_model_year": 1992,
+    "user_id": "019426d049721c1f2b073e5df032719e",
+    "activity_type": "adhoc1000"
+  },
+  {
+    "id": "b24065519b2802b67a0b91a876217fef",
+    "car_make": "Pontiac",
+    "car_model": "Grand Prix",
+    "car_vin": "JN1AZ4EH5BM730064",
+    "car_model_year": 1992,
+    "user_id": "bd692cda7fbb3bfe6dc6ea825dd96b12",
+    "activity_type": "adhoc100"
+  },
+  {
+    "id": "7b32b40c10285717c251fb0f6895a163",
+    "car_make": "Ford",
+    "car_model": "F150",
+    "car_vin": "1GKMCCE32AR309192",
+    "car_model_year": 2009,
+    "user_id": "bd692cda7fbb3bfe6dc6ea825dd96b12",
+    "activity_type": "adhoc1000"
+  },
+  {
+    "id": "f618e87df41a48df688d8bc7a210c89f",
+    "car_make": "Plymouth",
+    "car_model": "Voyager",
+    "car_vin": "WA1LMAFEXBD119643",
+    "car_model_year": 1994,
+    "user_id": "214327b8ead05f15ce9396ddfd845eb1",
+    "activity_type": "adhoc30"
+  },
+  {
+    "id": "f041283451e0fdafce445afe0979ab05",
+    "car_make": "Dodge",
+    "car_model": "Dakota",
+    "car_vin": "JM3KE2BE7D0715188",
+    "car_model_year": 2007,
+    "user_id": "666bdced01029d48009d28585da4b32c",
+    "activity_type": "adhoc50"
+  },
+  {
+    "id": "e85ce8e620ec8897782c8801a9b459cb",
+    "car_make": "GMC",
+    "car_model": "Sonoma Club Coupe",
+    "car_vin": "2C3CA6CT7AH738916",
+    "car_model_year": 1998,
+    "user_id": "e2b7609b9d9cab600c930f521535ce46",
+    "activity_type": "adhoc100"
+  },
+  {
+    "id": "7adb9fb2f2d13586cf48d06906867ed4",
+    "car_make": "Volkswagen",
+    "car_model": "GTI",
+    "car_vin": "JTJBM7FX3A5237321",
+    "car_model_year": 1999,
+    "user_id": 20,
+    "activity_type": "adhoc100"
+  }
+]
