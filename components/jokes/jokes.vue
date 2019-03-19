@@ -56,7 +56,7 @@
                 <span
                   v-if="chuckRandomJoke && !geekJoke"
                   class="title"
-                >{{chuckRandomJoke.value.joke}}</span>
+                >{{chuckRandomJoke.value.joke | htmlEntities}}</span>
                 <span v-if="geekJoke" class="title">
                   <div v-for="(value, key) in geekJoke" :key="key">
                     <span class="title" v-if="key == 'setup'">{{value}}</span>
