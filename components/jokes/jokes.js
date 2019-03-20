@@ -14,7 +14,8 @@ export default {
       chuckColor: 'primary',
       chuckGif: '',
       tile: true,
-      avatarSize: 10
+
+      isloadingGif: false
     }
   },
   methods: {
@@ -48,6 +49,7 @@ export default {
         })
     },
     getGif() {
+      this.isloadingGif = true;
       // http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=P9VocNCAKR94qfy5MNlxGGV3RLmUSaxf&limit=1
       this.$axios.$get("http://api.giphy.com/v1/gifs/random", {
           params: {
@@ -57,6 +59,10 @@ export default {
         })
         .then((gif) => {
           this.chuckGif = gif.data.images.downsized.url;
+          setTimeout(() => {
+            this.isloadingGif = false;
+          }, 3000);
+
         })
     },
     // geekJokes() {
@@ -76,9 +82,7 @@ export default {
   },
   created() {},
   watch: {
-    chuckGif(newVal, oldVal) {
-      this.chuckGif = newVal;
-    },
+
     isGeeky(newVal, oldVal) {
       newVal == true ? this.geekyColor = 'primary' : this.geekyColor = 'deep-orange lighten-5'
     },

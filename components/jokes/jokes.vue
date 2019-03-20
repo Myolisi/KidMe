@@ -59,8 +59,19 @@
                     class="title"
                   >{{chuckRandomJoke.value.joke | htmlEntities}}</span>
                 </v-flex>
-                <v-flex md4 offset-md1 v-if="chuckGif">
-                  <img :src="chuckGif" width="300" alt="avatar">
+                <v-flex md4 offset-md1 v-if="chuckGif" text-md-center>
+                  <div v-if="isloadingGif">
+                    <!-- <img
+                      src="https://gifimage.net/wp-content/uploads/2017/07/chuck-norris-gif-6.gif"
+                      width="100"
+                      alt="avatar"
+                    >-->
+                    <v-progress-circular :size="50" color="primary" indeterminate></v-progress-circular>
+                  </div>
+
+                  <div v-else>
+                    <img :src="chuckGif" width="300" alt="avatar">
+                  </div>
                 </v-flex>
 
                 <span v-if="geekJoke" class="title">
