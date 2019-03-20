@@ -5,9 +5,9 @@
       <v-toolbar-title class="white--text">Kid Me</v-toolbar-title>
       <v-spacer></v-spacer>
       <!-- @click="$nuxt.$router.push({path: 'search', query: {name :'Some Data'}}) -->
-      <v-btn icon>
-        <v-icon>search</v-icon>
-      </v-btn>
+      <v-avatar size="3" color="red">
+        <!-- <img src="logo.jpg" alt="alt"> -->
+      </v-avatar>
     </v-toolbar>
     <v-container>
       <nuxt/>

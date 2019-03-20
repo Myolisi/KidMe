@@ -11,7 +11,10 @@ export default {
       isGeeky: false,
       isChuck: true,
       geekyColor: 'deep-orange lighten-5',
-      chuckColor: 'primary'
+      chuckColor: 'primary',
+      chuckGif: '',
+      tile: true,
+      avatarSize: 10
     }
   },
   methods: {
@@ -19,6 +22,7 @@ export default {
       console.log(this.name)
     },
     chuckRandom() {
+      this.getGif()
       this.geekJoke = ''
       this.$axios.$get('http://api.icndb.com/jokes/random?exclude=[explicit]/3')
         .then((result) => {
@@ -43,6 +47,18 @@ export default {
           this.geekJoke = joke;
         })
     },
+    getGif() {
+      // http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=P9VocNCAKR94qfy5MNlxGGV3RLmUSaxf&limit=1
+      this.$axios.$get("http://api.giphy.com/v1/gifs/random", {
+          params: {
+            tag: 'shock',
+            api_key: 'P9VocNCAKR94qfy5MNlxGGV3RLmUSaxf'
+          }
+        })
+        .then((gif) => {
+          this.chuckGif = gif.data.images.downsized.url;
+        })
+    },
     // geekJokes() {
     //   this.chuckRandomJokeNoExplicit = ''
     //   this.$axios.$get('https://geek-jokes.sameerkumar.website/api')
@@ -58,14 +74,11 @@ export default {
       }
     }
   },
-
-  computed: {
-
-  },
-  created() {
-
-  },
+  created() {},
   watch: {
+    chuckGif(newVal, oldVal) {
+      this.chuckGif = newVal;
+    },
     isGeeky(newVal, oldVal) {
       newVal == true ? this.geekyColor = 'primary' : this.geekyColor = 'deep-orange lighten-5'
     },
