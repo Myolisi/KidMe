@@ -26,47 +26,47 @@
             <img src="../../static/nerd_png_921839.jpg" alt="trevor">
           </v-avatar>Geeky Jokes
         </v-chip>
-        <v-btn ml-2 color="success" small flat @click="kidme">Get Joke</v-btn>
+        <!-- <v-btn ml-2 color="primary" small @click="kidme">Get Joke</v-btn> -->
       </v-flex>
     </v-layout>
     <v-layout row wrap>
-      <v-flex md11>
-        <v-card :elevation="elevation" flat>
+      <v-flex md12>
+        <v-card :elevation="elevation" flat class="grow pl-4 pr-4">
           <div v-if="chuckRandomJoke || geekJoke">
-            <v-card-title primary-title class="justify-end">
-              <span v-if="chuckRandomJoke && chuckRandomJoke.value.categories.length !=0">
-                <span
-                  v-for="(categories, index) in chuckRandomJoke.value.categories"
-                  v-bind:key="index"
-                >
-                  <v-chip color="green" close text-color="white">{{categories}}</v-chip>
-                </span>
-              </span>
-
-              <span v-else-if="geekJoke">
-                <v-chip color="green" close text-color="white">{{geekJoke.type}}</v-chip>
-              </span>
-
-              <template v-else>
-                <v-chip color="red" disabled text-color="white">not categorize</v-chip>
-              </template>
-            </v-card-title>
-            <v-card-text>
-              <v-layout class="ml-5 mr-5">
-                <v-flex md7>
-                  <span
-                    v-if="chuckRandomJoke && !geekJoke"
-                    class="title"
-                  >{{chuckRandomJoke.value.joke | htmlEntities}}</span>
+            <v-card-title primary-title class="mr-5">
+              <v-layout row wrap>
+                <v-flex md10 class="text-md-left">
+                  <v-btn color="primary" small @click="kidme">Next</v-btn>
                 </v-flex>
-                <v-flex md4 offset-md1 v-if="chuckGif" text-md-center>
+                <v-flex md2 class="text-md-right">
+                  <span v-if="chuckRandomJoke && chuckRandomJoke.value.categories.length !=0">
+                    <span
+                      v-for="(categories, index) in chuckRandomJoke.value.categories"
+                      v-bind:key="index"
+                    >
+                      <v-chip color="green" small text-color="white">{{categories}}</v-chip>
+                    </span>
+                  </span>
+
+                  <span v-else-if="geekJoke">
+                    <v-chip color="green" small text-color="white">{{geekJoke.type}}</v-chip>
+                  </span>
+
+                  <template v-else>
+                    <v-chip color="red" small text-color="white">not categorize</v-chip>
+                  </template>
+                </v-flex>
+              </v-layout>
+            </v-card-title>
+            <v-card-text class="pa-4">
+              <v-layout>
+                <v-flex md7 v-if="chuckRandomJoke && !geekJoke">
+                  <span class="title">{{chuckRandomJoke.value.joke | htmlEntities}}</span>
+                </v-flex>
+                <v-flex md3 offset-md1 v-if="chuckGif && chuckRandomJoke" text-md-center>
                   <div v-if="isloadingGif">
-                    <!-- <img
-                      src="https://gifimage.net/wp-content/uploads/2017/07/chuck-norris-gif-6.gif"
-                      width="100"
-                      alt="avatar"
-                    >-->
-                    <v-progress-circular :size="50" color="primary" indeterminate></v-progress-circular>
+                    <!-- <img src="loading.gif" width="100" alt="avatar"> -->
+                    <v-progress-circular :size="30" color="primary" indeterminate></v-progress-circular>
                   </div>
 
                   <div v-else>
@@ -77,12 +77,21 @@
                 <span v-if="geekJoke" class="title">
                   <div v-for="(value, key) in geekJoke" :key="key">
                     <span class="title" v-if="key == 'setup'">{{value}}</span>
-
                     <span class="title red--text" v-if="key == 'punchline'">{{value}}</span>
                   </div>
                 </span>
               </v-layout>
             </v-card-text>
+          </div>
+          <div v-if="norJoke" class="text-md-center">
+            <v-layout row column>
+              <v-flex md12 pa-3>
+                <a md12 color="success" class="title" flat @click="jokePlease">You tell joke me now!</a>
+              </v-flex>
+              <v-flex md12>
+                <img src="stickman.gif" height="250" alt="avatar">
+              </v-flex>
+            </v-layout>
           </div>
           <v-card-actions>
             <!-- <v-btn icon flat>

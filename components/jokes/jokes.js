@@ -1,69 +1,73 @@
 export default {
   data() {
     return {
-      chuckRandomJoke: '',
-      chuckRandomJokeNoExplicit: '',
-      randomJoke: '',
+      chuckRandomJoke: "",
+      chuckRandomJokeNoExplicit: "",
+      randomJoke: "",
       isExlicit: false,
-      geekJoke: '',
+      geekJoke: "",
       elevation: 7,
       name: "James May",
       isGeeky: false,
       isChuck: true,
-      geekyColor: 'deep-orange lighten-5',
-      chuckColor: 'primary',
-      chuckGif: '',
+      geekyColor: "deep-orange lighten-5",
+      chuckColor: "primary",
+      chuckGif: "",
       tile: true,
+      norJoke: true,
 
       isloadingGif: false
-    }
+    };
   },
   methods: {
     updateName() {
-      console.log(this.name)
+      console.log(this.name);
     },
     chuckRandom() {
-      this.getGif()
-      this.geekJoke = ''
-      this.$axios.$get('http://api.icndb.com/jokes/random?exclude=[explicit]/3')
-        .then((result) => {
-          this.chuckRandomJoke = result
-        }).catch((err) => {
-
-        });
+      this.getGif();
+      this.geekJoke = "";
+      this.$axios
+        .$get("http://api.icndb.com/jokes/random?exclude=[explicit]/3")
+        .then(result => {
+          this.chuckRandomJoke = result;
+        })
+        .catch(err => {});
     },
     chuckRandomNoExplicit() {
-      this.chuckRandomJoke = ''
-      this.$axios.$get('http://api.icndb.com/jokes/random?exclude=[explicit]')
-        .then((result) => {
-          this.chuckRandomJokeNoExplicit = result
-        }).catch((err) => {
-
-        });
+      this.chuckRandomJoke = "";
+      this.$axios
+        .$get("http://api.icndb.com/jokes/random?exclude=[explicit]")
+        .then(result => {
+          this.chuckRandomJokeNoExplicit = result;
+        })
+        .catch(err => {});
     },
     geekJokes() {
-      this.chuckRandomJoke = ''
-      this.$axios.$get('https://official-joke-api.appspot.com/random_joke')
-        .then((joke) => {
+      this.chuckRandomJoke = "";
+      this.$axios
+        .$get("https://official-joke-api.appspot.com/random_joke")
+        .then(joke => {
           this.geekJoke = joke;
-        })
+        });
+    },
+    jokePlease() {
+      this.kidme();
     },
     getGif() {
       this.isloadingGif = true;
       // http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=P9VocNCAKR94qfy5MNlxGGV3RLmUSaxf&limit=1
-      this.$axios.$get("http://api.giphy.com/v1/gifs/random", {
+      this.$axios
+        .$get("http://api.giphy.com/v1/gifs/random", {
           params: {
-            tag: 'shock',
-            api_key: 'P9VocNCAKR94qfy5MNlxGGV3RLmUSaxf'
+            tag: "shock",
+            api_key: "P9VocNCAKR94qfy5MNlxGGV3RLmUSaxf"
           }
         })
-        .then((gif) => {
+        .then(gif => {
           this.chuckGif = gif.data.images.downsized.url;
-          setTimeout(() => {
-            this.isloadingGif = false;
-          }, 3000);
-
-        })
+          this.isloadingGif = false;
+          setTimeout(() => {}, 2000);
+        });
     },
     // geekJokes() {
     //   this.chuckRandomJokeNoExplicit = ''
@@ -73,21 +77,25 @@ export default {
     //     })
     // },
     kidme() {
+      this.norJoke = false;
       if (this.isChuck) {
-        this.chuckRandom()
+        this.chuckRandom();
       } else if (this.isGeeky) {
-        this.geekJokes()
+        this.geekJokes();
       }
     }
   },
   created() {},
   watch: {
-
     isGeeky(newVal, oldVal) {
-      newVal == true ? this.geekyColor = 'primary' : this.geekyColor = 'deep-orange lighten-5'
+      newVal == true
+        ? (this.geekyColor = "primary")
+        : (this.geekyColor = "deep-orange lighten-5");
     },
     isChuck(newVal, oldVal) {
-      newVal == true ? this.chuckColor = 'primary' : this.chuckColor = 'deep-orange lighten-5'
+      newVal == true
+        ? (this.chuckColor = "primary")
+        : (this.chuckColor = "deep-orange lighten-5");
     }
   }
-}
+};
