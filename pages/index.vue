@@ -13,6 +13,9 @@ export default {
   },
   data() {
     return {};
+  },
+  mounted(){
+    this.$axios.$get("/api/likes").then(res => console.log(res)).catch(error => console.log(error))
   }
 };
 </script>

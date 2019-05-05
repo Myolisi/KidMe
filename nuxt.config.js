@@ -4,6 +4,7 @@ const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
   mode: 'universal',
+  extension: ['js', 'ts'],
 
   /*
    ** Headers of the page
@@ -53,7 +54,7 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '@/plugins/vuetify'
+    '@/plugins/vuetify', '@/plugins/filters'
   ],
 
   /*
@@ -69,7 +70,7 @@ module.exports = {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'http://localhost:3000/'
+    // baseURL: 'http://localhost:3000/'
   },
 
   /*

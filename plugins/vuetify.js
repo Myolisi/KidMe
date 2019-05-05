@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import colors from 'vuetify/es5/util/colors'
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 
 Vue.use(Vuetify, {
   theme: {
@@ -11,6 +12,7 @@ Vue.use(Vuetify, {
     warning: '#ffc107',
     info: '#03a9f4',
     success: '#8bc34a'
-  }
+  },
+  iconfont: 'fa4'
 
 })
