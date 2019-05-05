@@ -15,7 +15,6 @@ export default {
       chuckGif: "",
       tile: true,
       norJoke: true,
-
       isloadingGif: false
     };
   },
@@ -88,14 +87,14 @@ export default {
   created() {},
   watch: {
     isGeeky(newVal, oldVal) {
-      newVal == true
-        ? (this.geekyColor = "primary")
-        : (this.geekyColor = "deep-orange lighten-5");
+      newVal == true ?
+        (this.geekyColor = "primary") :
+        (this.geekyColor = "deep-orange lighten-5");
     },
     isChuck(newVal, oldVal) {
-      newVal == true
-        ? (this.chuckColor = "primary")
-        : (this.chuckColor = "deep-orange lighten-5");
+      newVal == true ?
+        (this.chuckColor = "primary") :
+        (this.chuckColor = "deep-orange lighten-5");
     }
   }
 };
