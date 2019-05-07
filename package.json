@@ -13,6 +13,10 @@
     "precommit": "npm run lint",
     "heroku-postbuild": "npm run build"
   },
+  "engines": {
+    "node": "10.15.3",
+    "yarn": "1.13.0"
+  },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
     "body-parser": "^1.18.3",
