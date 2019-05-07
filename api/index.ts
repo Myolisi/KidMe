@@ -18,7 +18,7 @@ const option = {
 };
 connect(get('database.host'));
 
-const host = process.env.HOST || '127.0.0.1';
+const host = process.env.HOST || '0.0.0.0';
 const port = Number(process.env.PORT) || 3000;
 
 nuxtConfig.dev = !(process.env.NODE_ENV === 'production');
@@ -42,8 +42,6 @@ async function start() {
 
   app.listen(port, host);
   app.get('*', nuxt.render);
-  console.log(
-    chalk.cyan(`--> Server listening on http://${host}:${port} <---`)
-  );
+  console.log(chalk.cyan(`--> Server listening on http://${host}:${port} <---`));
 }
 start();
