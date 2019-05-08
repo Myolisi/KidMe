@@ -26,7 +26,7 @@ export default {
       this.getGif();
       this.geekJoke = "";
       this.$axios
-        .$get("http://api.icndb.com/jokes/random?exclude=[explicit]/3")
+        .$get("https://api.icndb.com/jokes/random?exclude=[explicit]/3")
         .then(result => {
           this.chuckRandomJoke = result;
         })
@@ -35,7 +35,7 @@ export default {
     chuckRandomNoExplicit() {
       this.chuckRandomJoke = "";
       this.$axios
-        .$get("http://api.icndb.com/jokes/random?exclude=[explicit]")
+        .$get("https://api.icndb.com/jokes/random?exclude=[explicit]")
         .then(result => {
           this.chuckRandomJokeNoExplicit = result;
         })
@@ -56,7 +56,7 @@ export default {
       this.isloadingGif = true;
       // http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=P9VocNCAKR94qfy5MNlxGGV3RLmUSaxf&limit=1
       this.$axios
-        .$get("http://api.giphy.com/v1/gifs/random", {
+        .$get("https://api.giphy.com/v1/gifs/random", {
           params: {
             tag: "shock",
             api_key: "P9VocNCAKR94qfy5MNlxGGV3RLmUSaxf"
