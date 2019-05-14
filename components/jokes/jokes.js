@@ -49,9 +49,7 @@ export default {
           this.geekJoke = joke;
         });
     },
-    jokePlease() {
-      this.kidme();
-    },
+
     getGif() {
       this.isloadingGif = true;
       // http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=P9VocNCAKR94qfy5MNlxGGV3RLmUSaxf&limit=1
@@ -84,7 +82,9 @@ export default {
       }
     }
   },
-  created() {},
+  created() {
+    this.kidme();
+  },
   watch: {
     isGeeky(newVal, oldVal) {
       newVal == true ?
