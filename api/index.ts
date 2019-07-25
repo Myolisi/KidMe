@@ -1,3 +1,4 @@
+import fs = require('fs');
 import express = require('express');
 import { Builder, Nuxt } from 'nuxt';
 import nuxtConfig = require('../nuxt.config');
@@ -6,9 +7,24 @@ import bodyparser = require('body-parser');
 import { set, connect } from 'mongoose';
 import router from './routes/jokesStats';
 import { get } from 'config';
+import https = require('https');
+import http = require('http');
 
+const host = process.env.HOST || '0.0.0.0';
+const port = Number(process.env.PORT) || 3000;
 const app = express();
 
+https
+  .createServer(
+    {
+      key: fs.readFileSync('./api/server.key'),
+      cert: fs.readFileSync('./api/server.cert')
+    },
+    app
+  )
+  .listen(port, host);
+
+http.createServer(app).listen(port);
 // mongos
 set('useNewUrlParser', true);
 const option = {
@@ -17,9 +33,6 @@ const option = {
   reconnectTries: 30000
 };
 connect(get('database.host'));
-
-const host = process.env.HOST || '0.0.0.0';
-const port = Number(process.env.PORT) || 3000;
 
 nuxtConfig.dev = !(process.env.NODE_ENV === 'production');
 
@@ -40,7 +53,6 @@ async function start() {
     await builder.build();
   }
 
-  app.listen(port, host);
   app.get('*', nuxt.render);
   console.log(chalk.cyan(`--> Server listening on http://${host}:${port} <---`));
 }
