@@ -27,7 +27,7 @@ module.exports = {
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/favicon.ico'
+        href: '/confused.png'
       },
       {
         rel: 'stylesheet',
@@ -54,7 +54,7 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '@/plugins/vuetify', '@/plugins/filters'
+    '@/plugins/vuetify', '@/plugins/filters', '@/plugins/social'
   ],
 
   /*
@@ -68,10 +68,10 @@ module.exports = {
   /*
    ** Axios module configuration
    */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-    baseURL: process.env.HOST || 'http://localhost:3000/'
-  },
+  // axios: {
+  //   // See https://github.com/nuxt-community/axios-module#options
+  //   baseURL: process.env.HOST || 'http://localhost:3000/'
+  // },
 
   /*
    ** Build configuration
@@ -80,6 +80,7 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
+    vendor: ['vue-social-sharing'],
     maxChunkSize: 900000,
     extend(config, ctx) {
       // Run ESLint on save
