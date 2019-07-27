@@ -14,17 +14,21 @@ const host = process.env.HOST || '0.0.0.0';
 const port = Number(process.env.PORT) || 3000;
 const app = express();
 
-https
-  .createServer(
-    {
-      key: fs.readFileSync('./api/server.key'),
-      cert: fs.readFileSync('./api/server.cert')
-    },
-    app
-  )
-  .listen(port, host);
+console.log(process.env.NODE_ENV);
+if (process.env.NODE_ENV === 'production') {
+  https
+    .createServer(
+      {
+        key: fs.readFileSync('./api/server.key'),
+        cert: fs.readFileSync('./api/server.cert')
+      },
+      app
+    )
+    .listen(port, host);
+} else {
+  http.createServer(app).listen(port);
+}
 
-http.createServer(app).listen(port);
 // mongos
 set('useNewUrlParser', true);
 const option = {
