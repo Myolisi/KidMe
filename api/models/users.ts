@@ -5,8 +5,7 @@ import { MongoError } from 'mongodb';
 export class jokeStat extends Typegoose {}
 
 export class users extends MongoBase<
-  jokeStat extends Typegoose ? Typegoose : any
-> {
+  jokeStat> {
   constructor() {
     super('kid-me-api', 'joke-stats');
   }
