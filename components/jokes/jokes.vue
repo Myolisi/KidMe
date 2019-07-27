@@ -1,5 +1,26 @@
 <template>
   <div>
+    <v-btn>
+      <v-icon>fas fa-code</v-icon>
+    </v-btn>
+    <div>
+      <social-sharing :url="shareLink" inline-template>
+        <div>
+          <network network="facebook">
+            <i class="fa fa-facebook"></i> Facebook
+          </network>
+          <network network="googleplus">
+            <i class="fa fa-google-plus"></i> Google +
+          </network>
+
+          <network network="whatsapp">
+            <i class="fa fa-whatsapp"></i> Whatsapp
+          </network>
+
+          <!-- and the others networs tag pasted from the readm.md -->
+        </div>
+      </social-sharing>
+    </div>
     <v-layout row wrap justify-center class="mb-3">
       <v-flex md12>
         <v-chip
@@ -64,7 +85,9 @@
                   <div class="spacer title">{{chuckRandomJoke.value.joke | htmlEntities}}</div>
                   <v-spacer></v-spacer>
                   <div class="text-sm-left mt-5">
-                    <v-btn color="amber lighten-1" small @click="kidme">Next</v-btn>
+                    <v-text-field name="name" label="label" :model="shareLink"></v-text-field>
+                    {{shareLink}}
+                    <v-btn color="amber lighten-1" small @click="updateAndNavigate()">Next</v-btn>
                     <v-btn flat icon color="primary">
                       <v-icon>thumb_up</v-icon>
                     </v-btn>

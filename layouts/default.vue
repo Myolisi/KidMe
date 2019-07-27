@@ -2,11 +2,9 @@
   <v-app darken-1>
     <v-toolbar dark color="primary">
       <v-toolbar-side-icon>
-        <v-btn icon flat @click="$router.push('/')">
-          <v-icon>home</v-icon>
-        </v-btn>
+        <v-icon>home</v-icon>
       </v-toolbar-side-icon>
-      <v-toolbar-title class="white--text">Kid Me</v-toolbar-title>
+      <v-toolbar-title class="white--text" @click="$router.push('/')">Kid Me</v-toolbar-title>
       <v-spacer></v-spacer>
       <!-- @click="$nuxt.$router.push({path: 'search', query: {name :'Some Data'}}) -->
       <v-avatar size="3" color="red">
