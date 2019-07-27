@@ -8,7 +8,7 @@
     </v-layout>
     <v-layout row justify-center>
       <v-flex md6>
-        <img src="stickman.gif" height="390" width="100%" alt="avatar">
+        <img src="stickman.gif" height="390" width="100%" alt="avatar" />
       </v-flex>
     </v-layout>
   </div>
@@ -21,8 +21,18 @@ export default {
   },
   methods: {
     go() {
-      this.$router.push("jokes");
+      this.$router.push("jokes/random");
     }
+  },
+  mounted() {
+    this.$axios
+      .$get("/api/likes")
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => {
+        console.log("error connecting to API");
+      });
   }
 };
 </script>

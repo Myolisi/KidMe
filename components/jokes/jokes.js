@@ -15,22 +15,44 @@ export default {
       chuckGif: "",
       tile: true,
       norJoke: true,
-      isloadingGif: false
+      isloadingGif: false,
+      shareLink: ''
     };
   },
   methods: {
-    updateName() {
-      console.log(this.name);
+    updateAndNavigate() {
+      if (this.$route.params.shared != 'random') {
+        this.$route.params.shared = 'random'
+        this.$router.push('random')
+      } else {
+        this.kidme();
+      }
+
+
+      // $router.push('random')
     },
     chuckRandom() {
+      this.shareLink = ''
       this.getGif();
       this.geekJoke = "";
-      this.$axios
-        .$get("https://api.icndb.com/jokes/random?exclude=[explicit]/3")
-        .then(result => {
-          this.chuckRandomJoke = result;
-        })
-        .catch(err => {});
+      console.log(this.$route.params)
+      if (this.$route.params.shared != 'random') {
+        this.$axios
+          .$get(`http://api.icndb.com/jokes/${this.$route.params.shared}`)
+          .then(result => {
+            this.chuckRandomJoke = result;
+          })
+          .catch(err => {});
+      } else {
+        this.$axios
+          .$get("https://api.icndb.com/jokes/random?exclude=[explicit]/3")
+          .then(result => {
+            this.chuckRandomJoke = result;
+            this.shareLink = `https://kidmeapp.herokuapp.com/${result.value.id}`;
+          })
+          .catch(err => {});
+      }
+
     },
     chuckRandomNoExplicit() {
       this.chuckRandomJoke = "";
@@ -49,7 +71,6 @@ export default {
           this.geekJoke = joke;
         });
     },
-
     getGif() {
       this.isloadingGif = true;
       // http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=P9VocNCAKR94qfy5MNlxGGV3RLmUSaxf&limit=1
@@ -83,7 +104,12 @@ export default {
     }
   },
   created() {
-    this.kidme();
+    if (this.$route.params.shared != 'random') {
+      this.kidme();
+    } else {
+      this.kidme();
+    }
+
   },
   watch: {
     isGeeky(newVal, oldVal) {
