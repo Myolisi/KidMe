@@ -1,6 +1,10 @@
-# iotcs
+# Description
+This is a random jokes webapp built with Nuxtjs, Nodejs and Mongodb
+ external api's used
+- https://api.giphy.com for gifs
+- https://official-joke-api.appspot.com and https://api.icndb.com for random jokes
 
-> My gnarly Nuxt.js project
+Check it out -> https://kidmeapp.herokuapp.com/
 
 ## Build Setup
 
